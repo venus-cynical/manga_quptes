@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayQuotes() {
         Object.keys(mangaData).forEach(mangaKey => {
             const manga = mangaData[mangaKey];
-            const quotesContainer = document.querySelector(`#${mangaKey}-section .quotes-container`);
+            const quotesContainer = document.querySelector(`#${mangaKey} .quotes-container`);
             if (quotesContainer) {
                 manga.quotes.forEach(quote => {
                     const quoteCard = document.createElement('div');
