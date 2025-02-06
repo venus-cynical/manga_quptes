@@ -116,3 +116,20 @@ footer {
         padding: 1rem;
     }
 }
+
+/* セクションの背景色 */
+#naruto {
+    background-color: #FFDDC1; /* パステルオレンジ */
+}
+
+#bleach {
+    background-color: #DDEFFF; /* パステルブルー */
+}
+
+#onepiece {
+    background-color: #D3FFDD; /* パステルグリーン */
+}
+
+#jojo {
+    background-color: #FFE1FF; /* パステルピンク */
+}
