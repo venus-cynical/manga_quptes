@@ -12,10 +12,13 @@ body {
     min-height: 100vh;
 }
 
-/* ヘッダー */
-header {
+.common-bg {
     background: #f0f0f0;
     color: #333;
+}
+
+/* ヘッダー */
+header {
     padding: 1.5rem 0;
     margin-bottom: 2rem;
 }
@@ -151,8 +154,6 @@ main {
 
 /* フッター */
 footer {
-    background: #f0f0f0;
-    color: #333;
     padding: 2rem 0;
     margin-top: 3rem;
 }
@@ -160,4 +161,20 @@ footer {
 footer p {
     text-align: center;
     font-size: 0.875rem;
+}
+
+/* メディアクエリ */
+@media (max-width: 768px) {
+    .manga-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .manga-button {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
