@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 { text: "『俺は仲間を絶対に見捨てない』", author: "うずまきナルト", image: "images/naruto/naruto.jpg" },
                 { text: "『俺の夢は火影になることだ』", author: "うずまきナルト", image: "images/naruto/naruto.jpg" },
                 { text: "『俺の忍道を貫くためだ！』", author: "うずまきナルト", image: "images/naruto/naruto.jpg" }
-            ],
-            color: "#FFDDC1"
+            ]
         },
         bleach: {
             title: "BLEACH",
@@ -31,8 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 { text: "『俺が守りたいものは守る』", author: "黒崎一護", image: "images/bleach/ichigo.jpg" },
                 { text: "『俺は俺の力を信じる』", author: "黒崎一護", image: "images/bleach/ichigo.jpg" },
                 { text: "『俺は俺の道を進む』", author: "黒崎一護", image: "images/bleach/ichigo.jpg" }
-            ],
-            color: "#DDEFFF"
+            ]
         },
         onepiece: {
             title: "ONE PIECE",
@@ -48,8 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 { text: "『俺の仲間は俺が守る』", author: "モンキー・D・ルフィ", image: "images/onepiece/luffy.jpg" },
                 { text: "『俺の自由を奪うな！』", author: "モンキー・D・ルフィ", image: "images/onepiece/luffy.jpg" },
                 { text: "『俺は海賊王になる男だ！』", author: "モンキー・D・ルフィ", image: "images/onepiece/luffy.jpg" }
-            ],
-            color: "#D3FFDD"
+            ]
         },
         jojo: {
             title: "ジョジョの奇妙な冒険",
@@ -65,63 +62,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 { text: "『俺の道を邪魔するな』", author: "空条承太郎", image: "images/jojo/jotaro.jpg" },
                 { text: "『俺の力を見せてやる』", author: "空条承太郎", image: "images/jojo/jotaro.jpg" },
                 { text: "『俺の決意は揺るがない』", author: "空条承太郎", image: "images/jojo/jotaro.jpg" }
-            ],
-            color: "#FFE1FF"
+            ]
         }
     };
 
-    const mangaGrid = document.querySelector('.manga-grid');
-    const quoteSection = document.querySelector('.quote-section');
-    const backButton = document.querySelector('.back-button');
-    const quotesContainer = document.querySelector('.quotes-container');
+    function displayQuotes() {
+        Object.keys(mangaData).forEach(mangaKey => {
+            const manga = mangaData[mangaKey];
+            const quotesContainer = document.querySelector(`#${mangaKey} .quotes-container`);
+            manga.quotes.forEach(quote => {
+                const quoteCard = document.createElement('div');
+                quoteCard.classList.add('quote-card');
 
-    function setupEventListeners() {
-        mangaGrid.addEventListener('click', function(event) {
-            if (event.target.classList.contains('manga-button')) {
-                const mangaKey = event.target.classList[1];
-                showQuotes(mangaKey);
-            }
-        });
+                const quoteContent = document.createElement('div');
+                quoteContent.classList.add('quote-content');
+                quoteContent.innerHTML = `<p class="quote-text">${quote.text}</p><p class="quote-author">- ${quote.author}</p>`;
 
-        backButton.addEventListener('click', function() {
-            showMain();
+                const characterImage = document.createElement('div');
+                characterImage.classList.add('character-image');
+                characterImage.style.backgroundImage = `url('${quote.image}')`;
+
+                quoteCard.appendChild(quoteContent);
+                quoteCard.appendChild(characterImage);
+                quotesContainer.appendChild(quoteCard);
+            });
         });
     }
 
-    function showMain() {
-        mangaGrid.style.display = 'grid';
-        quoteSection.style.display = 'none';
-        setupEventListeners(); // 再度イベントリスナーを設定
-    }
-
-    function showQuotes(mangaKey) {
-        const manga = mangaData[mangaKey];
-        const mangaTitle = document.querySelector('.manga-title');
-        mangaTitle.textContent = manga.title;
-
-        quotesContainer.innerHTML = '';
-        manga.quotes.forEach(quote => {
-            const quoteCard = document.createElement('div');
-            quoteCard.classList.add('quote-card');
-
-            const quoteContent = document.createElement('div');
-            quoteContent.classList.add('quote-content');
-            quoteContent.innerHTML = `<p class="quote-text">${quote.text}</p><p class="quote-author">- ${quote.author}</p>`;
-
-            const characterImage = document.createElement('div');
-            characterImage.classList.add('character-image');
-            characterImage.style.backgroundImage = `url('${quote.image}')`;
-
-            quoteCard.appendChild(quoteContent);
-            quoteCard.appendChild(characterImage);
-            quotesContainer.appendChild(quoteCard);
-        });
-
-        mangaGrid.style.display = 'none';
-        quoteSection.style.display = 'block';
-        quoteSection.style.backgroundColor = manga.color; // 背景色を設定
-    }
-
-    setupEventListeners();
-    showMain();
+    displayQuotes();
 });
