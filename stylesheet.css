@@ -153,3 +153,46 @@ footer {
 .floating-button:hover {
     background-color: #1e40af;
 }
+
+/* テーブルオブコンテンツのスタイル */
+.toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-items: center;
+    margin: 2rem 0;
+}
+
+.toc-item {
+    list-style-type: none;
+}
+
+.toc-circle {
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#naruto-toc .toc-circle {
+    background-color: #FFDDC1; /* パステルオレンジ */
+}
+
+#bleach-toc .toc-circle {
+    background-color: #DDEFFF; /* パステルブルー */
+}
+
+#onepiece-toc .toc-circle {
+    background-color: #D3FFDD; /* パステルグリーン */
+}
+
+#jojo-toc .toc-circle {
+    background-color: #FFE1FF; /* パステルピンク */
+}
