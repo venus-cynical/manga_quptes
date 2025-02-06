@@ -1,4 +1,4 @@
-/* 全体のスタイル /
+/* 全体のスタイル */
 body {
     margin: 0;
     font-family: 'Noto Sans JP', sans-serif;
@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
 }
 
-/ ヘッダー /
+/* ヘッダー */
 header {
     background: black;
     color: white;
@@ -26,7 +26,7 @@ header h1 {
     font-weight: bold;
 }
 
-/ メインコンテンツ /
+/* メインコンテンツ */
 main {
     flex-grow: 1;
     background: white;
@@ -36,7 +36,7 @@ main {
     max-width: 1200px;
 }
 
-/ 漫画グリッド /
+/* 漫画グリッド */
 .manga-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -91,7 +91,7 @@ main {
     line-height: 1.5;
 }
 
-/ 名言セクション /
+/* 名言セクション */
 .quote-section {
     max-width: 42rem;
     margin: 0 auto;
@@ -161,7 +161,7 @@ main {
     opacity: 0.1;
 }
 
-/ フッター */
+/* フッター */
 footer {
     background: black;
     color: white;
