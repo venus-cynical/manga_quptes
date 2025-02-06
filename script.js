@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showMain() {
         mangaGrid.style.display = 'grid';
         quoteSection.style.display = 'none';
+        setupEventListeners(); // Reattach event listeners
     }
 
     function showQuotes(mangaKey) {
