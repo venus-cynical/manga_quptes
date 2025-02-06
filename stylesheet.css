@@ -179,20 +179,34 @@ footer {
     text-align: center;
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 #naruto-toc .toc-oval {
-    background-color: #FFA500; /* オレンジ */
+    background-image: url("naruto_private.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
 }
 
 #bleach-toc .toc-oval {
-    background-color: #1E90FF; /* 青 */
+    background-image: url("BLEACH_private.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
 }
 
 #onepiece-toc .toc-oval {
-    background-color: #32CD32; /* 緑 */
+    background-image: url("onepiece_private.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
 }
 
 #jojo-toc .toc-oval {
-    background-color: #8A2BE2; /* 紫 */
+    background-image: url("jojo_private.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
 }
