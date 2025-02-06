@@ -86,6 +86,9 @@ main {
 .quote-section {
     max-width: 42rem;
     margin: 0 auto;
+    padding: 1rem; /* Add padding to match the screenshot */
+    border-radius: 0.5rem; /* Ensure the background is rounded */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
 }
 
 .back-button {
