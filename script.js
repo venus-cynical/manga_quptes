@@ -47,12 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const backButton = document.querySelector('.back-button');
     const quotesContainer = document.querySelector('.quotes-container');
 
-    function getRandomQuote(mangaKey) {
-        const quotes = mangaData[mangaKey].quotes;
-        const randomIndex = Math.floor(Math.random() * quotes.length);
-        return quotes[randomIndex];
-    }
-
     function showMain() {
         mangaGrid.style.display = 'grid';
         quoteSection.style.display = 'none';
@@ -63,23 +57,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const mangaTitle = document.querySelector('.manga-title');
         mangaTitle.textContent = manga.title;
 
-        const randomQuote = getRandomQuote(mangaKey);
-
         quotesContainer.innerHTML = '';
-        const quoteCard = document.createElement('div');
-        quoteCard.classList.add('quote-card');
+        manga.quotes.forEach(quote => {
+            const quoteCard = document.createElement('div');
+            quoteCard.classList.add('quote-card');
 
-        const quoteContent = document.createElement('div');
-        quoteContent.classList.add('quote-content');
-        quoteContent.innerHTML = `<p class="quote-text">${randomQuote.text}</p><p class="quote-author">- ${randomQuote.author}</p>`;
+            const quoteContent = document.createElement('div');
+            quoteContent.classList.add('quote-content');
+            quoteContent.innerHTML = `<p class="quote-text">${quote.text}</p><p class="quote-author">- ${quote.author}</p>`;
 
-        const characterImage = document.createElement('div');
-        characterImage.classList.add('character-image');
-        characterImage.style.backgroundImage = `url('${randomQuote.image}')`;
+            const characterImage = document.createElement('div');
+            characterImage.classList.add('character-image');
+            characterImage.style.backgroundImage = `url('${quote.image}')`;
 
-        quoteCard.appendChild(quoteContent);
-        quoteCard.appendChild(characterImage);
-        quotesContainer.appendChild(quoteCard);
+            quoteCard.appendChild(quoteContent);
+            quoteCard.appendChild(characterImage);
+            quotesContainer.appendChild(quoteCard);
+        });
 
         mangaGrid.style.display = 'none';
         quoteSection.style.display = 'block';
