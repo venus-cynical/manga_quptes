@@ -12,113 +12,56 @@ body {
     min-height: 100vh;
 }
 
-.common-bg {
-    background: #f0f0f0;
-    color: #333;
-}
-
-/* ヘッダー */
 header {
     padding: 1.5rem 0;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 header h1 {
-    text-align: center;
     font-size: 2rem;
     font-weight: bold;
 }
 
-/* メインコンテンツ */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2563eb;
+}
+
+nav ul li a:hover {
+    color: #1e40af;
+}
+
 main {
     flex-grow: 1;
     background: #fff;
     padding: 2rem;
     margin: 0 auto;
     width: 100%;
-    max-width: 1200px;
+    max-width: 800px;
 }
 
-/* 漫画グリッド */
-.manga-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-.manga-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.manga-button {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50%;
-    border: none;
-    font-weight: bold;
-    font-size: 1.125rem;
-    cursor: pointer;
-    transition: opacity 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.manga-button:hover {
-    opacity: 0.8;
-}
-
-.manga-button.naruto { background-color: #FFDDC1; }
-.manga-button.bleach { background-color: #DDEFFF; }
-.manga-button.onepiece { background-color: #D3FFDD; }
-.manga-button.jojo { background-color: #FFE1FF; }
-
-.manga-description {
-    text-align: center;
-    font-size: 0.875rem;
-    color: #4a5568;
-    max-width: 20rem;
-    line-height: 1.5;
-}
-
-/* 名言セクション */
-.quote-section {
-    max-width: 42rem;
-    margin: 0 auto;
-    padding: 1rem; /* Add padding to match the screenshot */
-    border-radius: 0.5rem; /* Ensure the background is rounded */
-    transition: background-color 0.3s ease; /* Smooth transition for background color change */
-}
-
-.back-button {
-    display: flex;
-    align-items: center;
-    color: #2563eb;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 1.5rem;
-}
-
-.back-button:hover {
-    color: #1e40af;
-}
-
-.back-button i {
-    margin-right: 0.5rem;
+section {
+    margin-bottom: 2rem;
 }
 
 .quotes-container {
     border-radius: 0.5rem;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.manga-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    background-color: #f9f9f9;
 }
 
 .quote-card {
@@ -155,29 +98,21 @@ main {
     opacity: 0.1;
 }
 
-/* フッター */
 footer {
     padding: 2rem 0;
     margin-top: 3rem;
-}
-
-footer p {
     text-align: center;
     font-size: 0.875rem;
 }
 
 /* メディアクエリ */
 @media (max-width: 768px) {
-    .manga-grid {
-        grid-template-columns: 1fr;
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
-    .manga-button {
-        width: 6rem;
-        height: 6rem;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
+    main {
+        padding: 1rem;
     }
 }
