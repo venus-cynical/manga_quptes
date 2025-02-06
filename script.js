@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showMain() {
         mangaGrid.style.display = 'grid';
         quoteSection.style.display = 'none';
-        setupEventListeners(); // Reattach event listeners
+        setupEventListeners(); // 再度イベントリスナーを設定
     }
 
     function showQuotes(mangaKey) {
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         mangaGrid.style.display = 'none';
         quoteSection.style.display = 'block';
-        quoteSection.style.backgroundColor = manga.color; // Set background color
+        quoteSection.style.backgroundColor = manga.color; // 背景色を設定
     }
 
     setupEventListeners();
