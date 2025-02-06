@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mangaData = {
         naruto: {
             title: "NARUTO",
-            description: "忍の世界を舞台に、主人公うずまきナルトが火影を目指し成長していく物語。友情、努力、勝利をテーマに描かれる忍者アクション漫画。",
+            description: "忍の世界を舞台に、主人公うずまきナルトが火影を目指し成長していく物語。友情、努力、勝利をテーマに描かれる忍者アクション漫画です。",
             quotes: [
                 { text: "『諦めたらそこで試合終了だってばよ！』", author: "うずまきナルト", image: "images/naruto/naruto.jpg" },
                 { text: "『俺が諦めるのを諦めろ！』", author: "うずまきナルト", image: "images/naruto/naruto.jpg" },
@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function showMain() {
         mangaGrid.style.display = 'grid';
         quoteSection.style.display = 'none';
-        setupEventListeners(); // 再度イベントリスナーを設定
     }
 
     function showQuotes(mangaKey) {
