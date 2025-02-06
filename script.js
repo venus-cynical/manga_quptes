@@ -47,6 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const backButton = document.querySelector('.back-button');
     const quotesContainer = document.querySelector('.quotes-container');
 
+    function setupEventListeners() {
+        mangaGrid.addEventListener('click', function(event) {
+            if (event.target.classList.contains('manga-button')) {
+                const mangaKey = event.target.classList[1];
+                showQuotes(mangaKey);
+            }
+        });
+
+        backButton.addEventListener('click', function() {
+            showMain();
+        });
+    }
+
     function showMain() {
         mangaGrid.style.display = 'grid';
         quoteSection.style.display = 'none';
@@ -79,16 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
         quoteSection.style.display = 'block';
     }
 
-    mangaGrid.addEventListener('click', function(event) {
-        if (event.target.classList.contains('manga-button')) {
-            const mangaKey = event.target.classList[1];
-            showQuotes(mangaKey);
-        }
-    });
-
-    backButton.addEventListener('click', function() {
-        showMain();
-    });
-
+    setupEventListeners();
     showMain();
 });
