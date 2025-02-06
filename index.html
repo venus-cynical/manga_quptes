@@ -4,50 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>人気漫画名言集</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .manga {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .manga div {
+            width: 22%;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .manga div h2 {
+            margin-top: 0;
+        }
+        .quote {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+        .quote img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: -1;
+        }
+    </style>
+    <script>
+        function showQuote(manga) {
+            var quotes = document.querySelectorAll('.quote');
+            quotes.forEach(function(quote) {
+                quote.style.display = 'none';
+            });
+            document.getElementById(manga + '-quote').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>人気漫画名言集</h1>
-        </header>
-
-        <main>
-            <div class="manga-grid">
-                <div class="manga-item">
-                    <button class="manga-button naruto">NARUTO</button>
-                    <p class="manga-description">忍の世界を舞台に、主人公うずまきナルトが火影を目指し成長していく物語。友情、努力、勝利をテーマに描かれる忍者アクション漫画です。</p>
-                </div>
-                <!-- 他の漫画も同様に追加 -->
+        <h1>人気漫画名言集</h1>
+        <div class="manga">
+            <div onclick="showQuote('naruto')">
+                <h2>NARUTO</h2>
             </div>
-
-            <div class="quote-section" style="display: none;">
-                <button class="back-button">
-                    <i class="fas fa-arrow-left"></i>
-                    戻る
-                </button>
-                <div class="quotes-container">
-                    <h2 class="manga-title">NARUTO</h2>
-                    <div class="quotes">
-                        <div class="quote-card">
-                            <div class="quote-content">
-                                <p class="quote-text">『諦めたらそこで試合終了だってばよ！』</p>
-                                <p class="quote-author">- うずまきナルト</p>
-                            </div>
-                            <div class="character-image" style="background-image: url('/images/naruto/naruto.jpg')"></div>
-                        </div>
-                        <!-- 他の名言も同様に追加 -->
-                    </div>
-                </div>
+            <div onclick="showQuote('bleach')">
+                <h2>BLEACH</h2>
             </div>
-        </main>
-
-        <footer>
-            <p>© 2025 人気漫画名言集</p>
-        </footer>
+            <div onclick="showQuote('onepiece')">
+                <h2>ONE PIECE</h2>
+            </div>
+            <div onclick="showQuote('jojo')">
+                <h2>ジョジョの奇妙な冒険</h2>
+            </div>
+        </div>
+        <div id="naruto-quote" class="quote">
+            <img src="path/to/naruto_image.png" alt="Naruto">
+            <p>「自分を信じろ。それが忍道だ。」- うずまきナルト</p>
+        </div>
+        <div id="bleach-quote" class="quote">
+            <img src="path/to/bleach_image.png" alt="Bleach">
+            <p>「心は誰にも見えない。でも、心遣いは見える。」- 黒崎一護</p>
+        </div>
+        <div id="onepiece-quote" class="quote">
+            <img src="path/to/onepiece_image.png" alt="One Piece">
+            <p>「海賊王に俺はなる！」- モンキー・D・ルフィ</p>
+        </div>
+        <div id="jojo-quote" class="quote">
+            <img src="path/to/jojo_image.png" alt="Jojo">
+            <p>「俺のそばに近寄るな。オラオラオラ！」- 空条承太郎</p>
+        </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
