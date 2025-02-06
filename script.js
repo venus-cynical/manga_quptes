@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         bleach: {
             title: "BLEACH",
-            description: "死神の少年・黒崎一護を主人公に、現世とソウル・ソサエティを舞台にした壮大なファンタジー活劇です。",
+            description: "死神の青年・黒崎一護を主人公に、現世とソウル・ソサエティを舞台にした壮大なファンタジー活劇です。",
             quotes: [
                 { text: "『心は誰にも見えない。でも、心遣いは見える。』", author: "黒崎一護", image: "images/bleach/ichigo.jpg" },
                 { text: "『生きている限りはその生を信じろ』", author: "黒崎一護", image: "images/bleach/ichigo.jpg" },
