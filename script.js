@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 { text: "『俺が諦めるのを諦めろ！』", author: "うずまきナルト", image: "images/naruto/naruto.jpg" },
                 { text: "『忍者ってのは背中で語るんだ』", author: "はたけカカシ", image: "images/naruto/kakashi.jpg" },
                 { text: "『いつか必ず…夢を叶えてやる！』", author: "うずまきナルト", image: "images/naruto/naruto.jpg" }
-            ]
+            ],
+            color: "#FFDDC1"
         },
         bleach: {
             title: "BLEACH",
@@ -18,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 { text: "『生きている限りはその生を信じろ』", author: "黒崎一護", image: "images/bleach/ichigo.jpg" },
                 { text: "『戦いを止めるつもりはない』", author: "黒崎一護", image: "images/bleach/ichigo.jpg" },
                 { text: "『絶望を跳ね返して進む、それが俺の生き方だ』", author: "黒崎一護", image: "images/bleach/ichigo.jpg" }
-            ]
+            ],
+            color: "#DDEFFF"
         },
         onepiece: {
             title: "ONE PIECE",
@@ -28,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 { text: "『仲間がいるから、俺は強くなれるんだ！』", author: "モンキー・D・ルフィ", image: "images/onepiece/luffy.jpg" },
                 { text: "『夢を追い続けることが、海賊の自由なんだ』", author: "モンキー・D・ルフィ", image: "images/onepiece/luffy.jpg" },
                 { text: "『絶対にあきらめない。それが俺の信条だ！』", author: "モンキー・D・ルフィ", image: "images/onepiece/luffy.jpg" }
-            ]
+            ],
+            color: "#D3FFDD"
         },
         jojo: {
             title: "ジョジョの奇妙な冒険",
@@ -38,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 { text: "『決して引かない、それがジョースターの誇りだ』", author: "ジョナサン・ジョースター", image: "images/jojo/jonathan.jpg" },
                 { text: "『時は止まる！』", author: "ディオ・ブランドー", image: "images/jojo/dio.jpg" },
                 { text: "『お前はもう死んでいる』", author: "空条承太郎", image: "images/jojo/jotaro.jpg" }
-            ]
+            ],
+            color: "#FFE1FF"
         }
     };
 
@@ -90,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         mangaGrid.style.display = 'none';
         quoteSection.style.display = 'block';
+        quoteSection.style.backgroundColor = manga.color; // Set background color
     }
 
     setupEventListeners();
