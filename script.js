@@ -70,22 +70,24 @@ document.addEventListener('DOMContentLoaded', function() {
         Object.keys(mangaData).forEach(mangaKey => {
             const manga = mangaData[mangaKey];
             const quotesContainer = document.querySelector(`#${mangaKey} .quotes-container`);
-            manga.quotes.forEach(quote => {
-                const quoteCard = document.createElement('div');
-                quoteCard.classList.add('quote-card');
+            if (quotesContainer) {
+                manga.quotes.forEach(quote => {
+                    const quoteCard = document.createElement('div');
+                    quoteCard.classList.add('quote-card');
 
-                const quoteContent = document.createElement('div');
-                quoteContent.classList.add('quote-content');
-                quoteContent.innerHTML = `<p class="quote-text">${quote.text}</p><p class="quote-author">- ${quote.author}</p>`;
+                    const quoteContent = document.createElement('div');
+                    quoteContent.classList.add('quote-content');
+                    quoteContent.innerHTML = `<p class="quote-text">${quote.text}</p><p class="quote-author">- ${quote.author}</p>`;
 
-                const characterImage = document.createElement('div');
-                characterImage.classList.add('character-image');
-                characterImage.style.backgroundImage = `url('${quote.image}')`;
+                    const characterImage = document.createElement('div');
+                    characterImage.classList.add('character-image');
+                    characterImage.style.backgroundImage = `url('${quote.image}')`;
 
-                quoteCard.appendChild(quoteContent);
-                quoteCard.appendChild(characterImage);
-                quotesContainer.appendChild(quoteCard);
-            });
+                    quoteCard.appendChild(quoteContent);
+                    quoteCard.appendChild(characterImage);
+                    quotesContainer.appendChild(quoteCard);
+                });
+            }
         });
     }
 
