@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: 'Noto Sans JP', sans-serif;
     min-height: 100vh;
-    background: black;
+    background: #f0f0f0;
 }
 
 .container {
@@ -14,22 +14,22 @@ body {
 
 /* ヘッダー */
 header {
-    background: black;
-    color: white;
+    background: #f0f0f0;
+    color: #333;
     padding: 1.5rem 0;
     margin-bottom: 2rem;
 }
 
 header h1 {
     text-align: center;
-    font-size: 1.875rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 /* メインコンテンツ */
 main {
     flex-grow: 1;
-    background: white;
+    background: #fff;
     padding: 2rem;
     margin: 0 auto;
     width: 100%;
@@ -39,21 +39,9 @@ main {
 /* 漫画グリッド */
 .manga-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     padding: 0 1rem;
-}
-
-@media (min-width: 768px) {
-    .manga-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .manga-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
 }
 
 .manga-item {
@@ -78,10 +66,10 @@ main {
     opacity: 0.8;
 }
 
-.manga-button.naruto { background-color: #FFE5E5; }
-.manga-button.bleach { background-color: #E5F1FF; }
-.manga-button.onepiece { background-color: #E5FFE5; }
-.manga-button.jojo { background-color: #FFE5FF; }
+.manga-button.naruto { background-color: #FFDDC1; }
+.manga-button.bleach { background-color: #DDEFFF; }
+.manga-button.onepiece { background-color: #D3FFDD; }
+.manga-button.jojo { background-color: #FFE1FF; }
 
 .manga-description {
     text-align: center;
@@ -163,8 +151,8 @@ main {
 
 /* フッター */
 footer {
-    background: black;
-    color: white;
+    background: #f0f0f0;
+    color: #333;
     padding: 2rem 0;
     margin-top: 3rem;
 }
