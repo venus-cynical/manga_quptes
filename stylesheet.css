@@ -167,11 +167,11 @@ footer {
     list-style-type: none;
 }
 
-.toc-circle {
+.toc-oval {
     background-color: #f9f9f9;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    border-radius: 50px;
+    width: 200px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -181,18 +181,18 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#naruto-toc .toc-circle {
-    background-color: #FFDDC1; /* パステルオレンジ */
+#naruto-toc .toc-oval {
+    background-color: #FFA500; /* オレンジ */
 }
 
-#bleach-toc .toc-circle {
-    background-color: #DDEFFF; /* パステルブルー */
+#bleach-toc .toc-oval {
+    background-color: #1E90FF; /* 青 */
 }
 
-#onepiece-toc .toc-circle {
-    background-color: #D3FFDD; /* パステルグリーン */
+#onepiece-toc .toc-oval {
+    background-color: #32CD32; /* 緑 */
 }
 
-#jojo-toc .toc-circle {
-    background-color: #FFE1FF; /* パステルピンク */
+#jojo-toc .toc-oval {
+    background-color: #8A2BE2; /* 紫 */
 }
