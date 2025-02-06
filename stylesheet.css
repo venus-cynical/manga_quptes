@@ -1,54 +1,175 @@
+/* 全体のスタイル /
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    background: black;
 }
+
 .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-h1 {
-    text-align: center;
-    color: #333;
-}
-.manga {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    flex-direction: column;
+    min-height: 100vh;
 }
-.manga div {
-    width: 22%;
-    padding: 10px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
+
+/ ヘッダー /
+header {
+    background: black;
+    color: white;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+}
+
+header h1 {
     text-align: center;
-    cursor: pointer;
+    font-size: 1.875rem;
+    font-weight: bold;
 }
-.manga div h2 {
-    margin-top: 0;
-}
-.quote {
-    display: none;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    color: #fff;
-    text-align: center;
-    position: relative;
-}
-.quote img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+
+/ メインコンテンツ /
+main {
+    flex-grow: 1;
+    background: white;
+    padding: 2rem;
+    margin: 0 auto;
     width: 100%;
-    height: 100%;
+    max-width: 1200px;
+}
+
+/ 漫画グリッド /
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .manga-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .manga-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.manga-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.manga-button {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.manga-button:hover {
+    opacity: 0.8;
+}
+
+.manga-button.naruto { background-color: #FFE5E5; }
+.manga-button.bleach { background-color: #E5F1FF; }
+.manga-button.onepiece { background-color: #E5FFE5; }
+.manga-button.jojo { background-color: #FFE5FF; }
+
+.manga-description {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #4a5568;
+    max-width: 20rem;
+    line-height: 1.5;
+}
+
+/ 名言セクション /
+.quote-section {
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    color: #2563eb;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.back-button:hover {
+    color: #1e40af;
+}
+
+.back-button i {
+    margin-right: 0.5rem;
+}
+
+.quotes-container {
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.manga-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.quote-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.quote-content {
+    position: relative;
+    z-index: 10;
+}
+
+.quote-text {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.quote-author {
+    font-size: 0.875rem;
+    color: #4a5568;
+    text-align: right;
+}
+
+.character-image {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     opacity: 0.1;
-    z-index: -1;
+}
+
+/ フッター */
+footer {
+    background: black;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    text-align: center;
+    font-size: 0.875rem;
 }
