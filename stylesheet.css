@@ -133,3 +133,23 @@ footer {
 #jojo {
     background-color: #FFE1FF; /* パステルピンク */
 }
+
+/* フローティングボタンのスタイル */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.floating-button:hover {
+    background-color: #1e40af;
+}
